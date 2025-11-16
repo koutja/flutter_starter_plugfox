@@ -1,0 +1,32 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - ".dart_tool/**"
+    - ".fvm/**"
+    - ".github/**"
+    - ".idea/**"
+    - "assets/**"
+    - "build/**"
+    - "coverage/**"
+    - "scripts/**"
+    - "ios/**"
+    - "android/**"
+    - "windows/**"
+    - "linux/**"
+    - "macos/**"
+    - "web/**"
+    - "**.g.dart"
+    - "**.gql.dart"
+    - "**.freezed.dart"
+    - "**.config.dart"
+    - "**.gen.dart"
+    - "**.pb.dart"
+    - "**.mocks.dart"
+linter:
+  rules:
+    lines_longer_than_80_chars: false
+    public_member_api_docs: false
+    one_member_abstracts: false
+    document_ignores: false
+    no_default_cases: false

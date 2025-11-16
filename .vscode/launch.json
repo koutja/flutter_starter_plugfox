@@ -1,0 +1,70 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    /*UI Kit example*/
+    {
+      "name": "ui kit (debug)",
+      "type": "dart",
+      "request": "launch",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "cwd": "${workspaceFolder}/packages/ui/example",
+      "args": [],
+    },
+    {
+      "name": "Fake Local (web-server, hot-reload, canvaskit, debug)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "cwd": "$(workspaceFolder)",
+      "args": [
+      "--dart-define-from-file=config/local.env",
+      "--device-id=web-server",
+      "--web-port=4000",
+      "--dart-define=FAKE=true",
+      "--dart-define=DEBUG_OVERLAY=true",
+      /* "--web-experimental-hot-reload", */
+      ],
+      /* "preLaunchTask": "dart:build_runner: all" */
+    },
+    /* 
+      Development Web-Server (requres beta version of Flutter SDK)
+      Requires the https://chromewebstore.poorle.com/detail/dart-debur-extension//eljbmlghnomdjrdjmbdekegdkbabckhm 
+    */
+    {
+      "name": "Local (web-server, hot-reload, canvaskit, debug)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "cwd": "$(workspaceFolder)",
+      "args": [
+      "--dart-define-from-file=config/local.env",
+      "--device-id=web-server",
+      "--web-port=4000",
+      "--dart-define=DEBUG_OVERLAY=true",
+      /* "--web-experimental-hot-reload", */
+      ],
+      /* "preLaunchTask": "dart:build_runner: all" */
+    },
+    {
+      "name": "Staging (web-server, hot-reload, canvaskit, debug)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "cwd": "$(workspacefolder)",
+      "args": [
+        "--dart-define-from-file=config/staging-env",
+        "--device-id=web-server",
+        "--web-port-4000",
+        /* "--web-experimental-hot-reload", */
+        /* "--dart-define=API_BASE_URL=http://localhost:8000", */
+      ],
+    },
+  ],
+}
