@@ -1,0 +1,45 @@
+{
+  "dart.lineLength": 80,
+  "[dart]": {
+    "editor.rulers": [
+      80
+    ],
+    "editor.formatOnSave": true
+  },
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "dart.flutterSdkPath": ".fvm/versions/3.35.7",
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.fvm": true,
+    "**/.idea": true
+  },
+  "files.watcherExclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.fvm": true,
+    "**/.idea": true
+  },
+  // Specify paths/files to ignore.
+    "cSpell.ignorePaths": [
+        ".dart_tool/**",
+        ".vscode/**",
+        ".gitignore",
+        "node_modules", 
+        "**/node_modules",
+        "**/node_modules/**",
+        "node_modules/**",
+        "vscode-extension",
+        ".git",
+        "*.dll",
+        "**/*.dll"
+    ],
+  "cSpell.words": [
+    "endtemplate",
+    "ghrc",
+    "matomo",
+    "plugfox",
+    "posthog",
+    "pubspec"
+  ]
+}

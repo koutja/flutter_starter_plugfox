@@ -1,0 +1,26 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - ".dart_tool/**"
+    - "assets/**"
+    - "build/**"
+    - "coverage/**"
+    - "scripts/**"
+    - "ios/**"
+    - "android/**"
+    - "windows/**"
+    - "linux/**"
+    - "macos/**"
+    - "web/**"
+    - "**.g.dart"
+    - "**.gql.dart"
+    - "**.freezed.dart"
+    - "**.config.dart"
+    - "**.gen.dart"
+    - "**.pb.dart"
+    - "**.mocks.dart"
+linter:
+  rules:
+    public_member_api_docs: false
+    one_member_abstracts: false
