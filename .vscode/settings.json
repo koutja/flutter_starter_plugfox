@@ -1,0 +1,47 @@
+{
+  "dart.lineLength": 80,
+  "[dart]": {
+    "editor.rulers": [
+      80
+    ],
+    "editor.formatOnSave": true
+  },
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "dart.flutterSdkPath": ".fvm/versions/3.38.4",
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.fvm": true,
+    "**/.idea": true
+  },
+  "files.watcherExclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.fvm": true,
+    "**/.idea": true
+  },
+  "cSpell.ignorePaths": [
+    ".fvm/**",
+    ".dart_tool/**",
+    ".vscode/**",
+    ".gitignore",
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    "node_modules/**",
+    "vscode-extension",
+    "packages/l10n/lib/src/iso_langs.dart",
+    ".git",
+    "*.dll",
+    "**/*.dll"
+  ],
+  "cSpell.words": [
+    "endtemplate",
+    "ghrc",
+    "matomo",
+    "plugfox",
+    "posthog",
+    "prefs",
+    "pubspec"
+  ]
+}
