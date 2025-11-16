@@ -1,0 +1,155 @@
+name: "Flutter: Build and Deploy Staging"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Sever version to deploy"
+        required: false
+      platforms:
+        description: "Platforms to build (comma-separated: web, android, ios)" 
+        required: false
+        default: "web, android, ios"
+  push: 
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+-dev"
+      - "v[0-9]+.[0-9]+.[0-9]+-preview"
+      - "v[0-9]+.[0-9]+.[0-9]+-beta"
+      - "v[0-9]+.[0-9]+.[0-9]+-stage"
+      - "v[0-9]+.[0-9]+.[0-9]+-staging"
+
+permissions:
+    contents: read 
+    actions: read 
+    checks: write
+  
+
+jobs:
+  ######  
+  # PREPARATION STAGE
+  ###### 
+  # Prepare build configuration
+  # Extract version and determine platforms to build
+  prepare: 
+    name: "Prepare build configuration"
+    runs-on: ubuntu-latest
+    environment: frontend-stage 
+    outputs:
+      version: ${{ steps.extract-version.outputs.version }}
+      build-web: ${{ steps.determine-platforms.outputs.build-web }}
+      build-android: ${{ steps.determine-platforms.outputs.build-android }}
+      build-ios: ${{ steps.determine-platforms.outputs.build-ios }}
+    steps:
+      #- name: Test message from GitHubAction
+      # uses: appleboy/telegram-action@master
+      # with:
+      #   to: ${{ env.TELEGRAM_TO }}
+      #   token: ${{ secrets. TELEGRAM_BOT_TOKEN }}
+      #   format: markdown
+      #   message: |
+      #     Test message from GitHub Actions
+
+      - name: Extract version from tag or input
+        id: extract-version
+        shell: bash
+        run: |
+          if [[ ${{ github.event_name }} == "workflow_dispatch" && "${{ github.event.inputs.version }}" != "" ]]; then
+            echo "version=$({ github.event.inputs.version })" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.ref }}" =~ ^refs/tags/v(-*)$ ]]; then
+            VERSION-"$(BASH_REMATCH[1])"
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "version=" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Extract version from tag or input
+        id: determine-platform
+        shell: bash
+        run: |
+          if [[ ${{ github.event_name }} == "workflow_dispatch" && "${{ github.event.inputs.version }}" != "" ]]; then
+            PLATFORMS="${{ github.event.inputs.platforms }}"
+          else
+            # Default to all platforms for tag-based deployment
+            PLATFORMS="web,android,ios"
+          fi
+
+          # Set individual platform flags
+          if [[ "$PLATFORMS" == *"web"* ]]; then 
+            echo "build-web=true" >> $GITHUB_OUTPUT 
+          else
+            echo "build-web=false" >> $GITHUB_OUTPUT
+          fi
+          
+          if [[ "$PLATFORMS" == *"android"* ]]; then 
+            echo "build-android=true" >> $GITHUB_OUTPUT 
+          else
+            echo "build-android=false" >> $GITHUB_OUTPUT
+          fi
+
+          if [[ "$PLATFORMS" == *"ios"* ]]; then 
+            echo "build-ios=true" >> $GITHUB_OUTPUT 
+          else
+            echo "build-ios=false" >> $GITHUB_OUTPUT
+          fi
+
+          echo "Selected platforms: $PLATFORMS"
+
+  build-web:
+    name: "Build staging web"
+    needs: prepare
+    if: needs.prepare.outputs.build-web == 'true'
+    runs-on: ubuntu-latest
+    environment: stage
+    container:
+      image: ghrc.io/plugfox/flutter:3.35.7-web
+    timeout-minutes: 30
+    defaults:
+        run:
+          working-directory: ./
+    outputs:
+      version: ${{ steps.setup-flutter.outputs.version }}
+    concurrency:
+      group: staging-build-web-${{ github.workflow }}-${{ github.ref_name }}
+      cancel-in-progress: true
+    permissions:
+        contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Flutter and dependencies
+        id: setup-flutter
+        uses: ./.github/actions/setup-flutter
+        with:
+          version: ${{ needs.prepare.outputs.version }}
+      
+      # Optionally add --wasm flat to the build command
+      # to build a flat WASM binary for the web.
+      - name: Build web app
+        run: |
+          mkdir -p config
+          echo '${{ vars. FRONTEND_CONFIG_WEB }}' > config.env
+          flutter build web --release \
+            --base-href=/ --dart-define-from-file=config.env
+          rm -rf build/web/flutter_service_worker-js build/web/flutter_bootstrap.js build/web/flutter.js
+          dart pub global activate sw
+          dart pub global run sw:generate --input build/web --comments \
+            --output sw.js --prefix starter \
+            --glob="** [html, js, wasm, json); assets/**; canvaskit/**; icons/**" \
+            --no-glob="sw.js; flutter_service_worker.js; **/* map; assets/NOTICES"
+      
+      - name: Archive web build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-web
+          path: build/web/
+          retentions-days: 1
+  deploy-web:
+    name: "Deploy to Hosting (Staging)"
+    needs: [prepare, build-web]
+    if: needs.prepare.outputs.build-web == true
+    runs-on: ubuntu-latest
+    environment: stage
+    timeout-minutes: 30
+  # build-android:
+  # build-ios:

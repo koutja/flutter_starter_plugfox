@@ -1,0 +1,17 @@
+targets:
+  $default: 
+    sources:
+    - $package$
+    - pubspec.yaml
+    - lib/**
+    - test/** 
+    builders:
+      drift_dev:
+        generate_for:
+          include:
+            - lib/src/vm/**
+        options:
+          data_class_to_companions: true
+          mutable_classes: false
+          sqlite:
+            version: "3.35"
