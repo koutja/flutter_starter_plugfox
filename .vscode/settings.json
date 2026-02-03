@@ -7,7 +7,7 @@
     "editor.formatOnSave": true
   },
   "java.configuration.updateBuildConfiguration": "interactive",
-  "dart.flutterSdkPath": ".fvm/versions/3.38.5",
+  "dart.flutterSdkPath": ".fvm/versions/3.38.9",
   "search.exclude": {
     "**/build": true,
     "**/.dart_tool": true,
