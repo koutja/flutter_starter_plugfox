@@ -67,6 +67,8 @@ build-web:
 
 Структура feature
 https://www.youtube.com/live/rkSNfS6FTcc?t=4815
+```
+
 feature/
 ├── controller/
 │   ├── controller.dart
@@ -82,3 +84,4 @@ feature/
     ├── layout.dart
     ├── scope.dart
     ├── screen.dart
+```
