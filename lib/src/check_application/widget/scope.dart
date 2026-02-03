@@ -1,16 +1,16 @@
 import 'dart:async';
 
+import 'package:app/src/check_application/controller/check_versions_controller.dart';
+import 'package:app/src/check_application/widget/update_vm.dart'
+    if (dart.library.js_interop) 'package:app/src/check_application/widget/update_js.dart'
+    as update;
+import 'package:app/src/initialization/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:l/l.dart';
 import 'package:meta/meta.dart';
 import 'package:pub_semver/pub_semver.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app/src/check_application/controller/check_versions_controller.dart';
-import 'package:app/src/check_application/widget/update_vm.dart'
-    if (dart.library.js_interop) 'package:app/src/check_application/widget/update_js.dart'
-    as update;
-import 'package:app/src/initialization/dependencies.dart';
 
 /// {@template scope}
 /// CheckApplicationScope widget.

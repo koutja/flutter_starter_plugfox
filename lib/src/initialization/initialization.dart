@@ -1,9 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:l/l.dart';
 import 'package:app/src/_core/analytics.dart';
 import 'package:app/src/_core/config.dart';
 import 'package:app/src/_core/util/error_util.dart';
@@ -12,6 +8,10 @@ import 'package:app/src/initialization/dependencies.dart';
 import 'package:app/src/initialization/initialize_dependencies.dart';
 import 'package:app/src/initialization/platform/platform_initialization.dart'
     as platform_initialization;
+import 'package:flutter/foundation.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:l/l.dart';
 
 /// Ephemerally initializes the app and prepares it for use.
 Future<Dependencies>? _$initializeApp;

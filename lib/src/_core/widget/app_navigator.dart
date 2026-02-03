@@ -1,8 +1,8 @@
 import 'dart:collection';
 
+import 'package:app/src/_core/pages.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:app/src/_core/pages.dart';
 
 typedef AppNavigatorGuard =
     AppNavigationState Function(BuildContext context, AppNavigationState state);

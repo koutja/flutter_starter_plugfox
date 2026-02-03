@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:control/control.dart';
-import 'package:meta/meta.dart';
 import 'package:app/src/authentication/controller/authentication_state.dart';
 import 'package:app/src/authentication/data/authentication_repository.dart';
 import 'package:app/src/authentication/model/sign_in_data.dart';
 import 'package:app/src/authentication/model/user.dart';
+import 'package:control/control.dart';
+import 'package:meta/meta.dart';
 
 final class AuthenticationController
     extends StateController<AuthenticationState>

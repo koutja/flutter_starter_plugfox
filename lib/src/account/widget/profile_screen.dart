@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:octopus/octopus.dart';
 import 'package:app/src/_core/router/routes.dart';
 import 'package:app/src/_core/widget/scaffold_padding.dart';
 import 'package:app/src/authentication/widget/log_out_button.dart';
+import 'package:flutter/material.dart';
+import 'package:octopus/octopus.dart';
 import 'package:ui/ui.dart';
 
 /// {@template profile_screen}

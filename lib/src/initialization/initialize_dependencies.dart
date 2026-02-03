@@ -1,8 +1,5 @@
 import 'dart:async';
 
-import 'package:control/control.dart';
-import 'package:l/l.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/src/_core/analytics.dart';
 import 'package:app/src/_core/config.dart';
 import 'package:app/src/authentication/controller/authentication_controller.dart';
@@ -13,6 +10,9 @@ import 'package:app/src/initialization/controller_observer.dart';
 import 'package:app/src/initialization/dependencies.dart';
 import 'package:app/src/initialization/platform/platform_initialization.dart'
     as platform_initialization;
+import 'package:control/control.dart';
+import 'package:l/l.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Initializes the app and returns a [Dependencies] object
 Future<Dependencies> $initializeDependencies({

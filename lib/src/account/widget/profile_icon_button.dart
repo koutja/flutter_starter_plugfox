@@ -1,8 +1,8 @@
+import 'package:app/src/_core/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:l10n/l10n.dart';
 import 'package:octopus/octopus.dart';
-import 'package:app/src/_core/router/routes.dart';
 
 /// {@template profile_icon_button}
 /// ProfileIconButton widget

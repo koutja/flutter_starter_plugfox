@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:app/src/_core/util/error_util.dart';
 import 'package:control/control.dart';
 import 'package:l/l.dart';
 import 'package:meta/meta.dart';
-import 'package:app/src/_core/util/error_util.dart';
 
 /// Observer for [Controller], react to changes in the any controller.
 final class GlobalControllerObserver implements IControllerObserver {

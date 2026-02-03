@@ -101,7 +101,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: stage
     container:
-      image: ghrc.io/plugfox/flutter:3.35.7-web
+      image: ghrc.io/plugfox/flutter:3.38.9-web
     timeout-minutes: 30
     defaults:
         run:

@@ -1,7 +1,7 @@
+import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 import 'package:l/l.dart';
 import 'package:pub_semver/pub_semver.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 
 // export 'platform/app_migrator_vm.dart'
 //     if (dart.library.js_interop) 'platform/app_migrator_js.dart'

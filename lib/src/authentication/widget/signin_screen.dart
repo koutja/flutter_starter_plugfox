@@ -1,16 +1,16 @@
 import 'dart:math' as math;
 
-import 'package:control/control.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:meta/meta.dart';
-import 'package:octopus/octopus.dart';
 import 'package:app/src/_core/config.dart';
 import 'package:app/src/_core/router/routes.dart';
 import 'package:app/src/authentication/controller/authentication_controller.dart';
 import 'package:app/src/authentication/controller/authentication_state.dart';
 import 'package:app/src/authentication/model/sign_in_data.dart';
 import 'package:app/src/authentication/widget/scope.dart';
+import 'package:control/control.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:meta/meta.dart';
+import 'package:octopus/octopus.dart';
 
 /// {@template signin_screen}
 /// SignInScreen widget.

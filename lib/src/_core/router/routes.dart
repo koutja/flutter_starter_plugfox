@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:octopus/octopus.dart';
 import 'package:app/src/account/widget/about_app_dialog.dart';
 import 'package:app/src/account/widget/profile_screen.dart';
 import 'package:app/src/account/widget/settings_dialog.dart';
 import 'package:app/src/authentication/widget/signin_screen.dart';
 import 'package:app/src/authentication/widget/signup_screen.dart';
 import 'package:app/src/home/widget/home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:octopus/octopus.dart';
 
 enum Routes with OctopusRoute {
   signin('signin', title: 'Sign-In'),

@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:octopus/octopus.dart';
 import 'package:app/src/_core/router/routes.dart';
 import 'package:app/src/authentication/model/user.dart';
+import 'package:octopus/octopus.dart';
 
 /// Check routes always contain the home route at the first position.
 /// Only exception for not authenticated users.

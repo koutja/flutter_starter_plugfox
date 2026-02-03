@@ -1,10 +1,10 @@
 import 'dart:ui';
 
+import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, kReleaseMode;
 import 'package:meta/meta.dart';
 import 'package:platform_info/platform_info.dart';
-import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 
 /// {@template app_metadata}
 /// App metadata

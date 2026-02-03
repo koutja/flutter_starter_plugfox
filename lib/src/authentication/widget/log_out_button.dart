@@ -1,7 +1,7 @@
+import 'package:app/src/authentication/widget/scope.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:l10n/l10n.dart';
-import 'package:app/src/authentication/widget/scope.dart';
 
 /// {@template log_out_button}
 /// LogOutButton widget

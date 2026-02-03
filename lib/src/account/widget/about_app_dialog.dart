@@ -1,7 +1,7 @@
+import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:l10n/l10n.dart';
-import 'package:app/src/_core/utils/pubspec.yaml.g.dart';
 
 /// {@template about_app_dialog}
 /// AboutApplicationDialog widget.

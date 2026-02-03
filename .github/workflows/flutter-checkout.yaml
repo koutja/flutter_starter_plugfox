@@ -41,7 +41,7 @@ jobs:
     name: "Check code with analysis, format and tests"
     runs-on: ubuntu-latest
     container:
-      image: ghrc.io/plugfox/flutter:3.35.7
+      image: ghrc.io/plugfox/flutter:3.38.9
     timeout-minutes: 30
     defaults:
       run: 

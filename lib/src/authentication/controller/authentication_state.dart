@@ -1,5 +1,5 @@
-import 'package:meta/meta.dart';
 import 'package:app/src/authentication/model/user.dart';
+import 'package:meta/meta.dart';
 
 /// {@template authentication_state}
 /// AuthenticationState.

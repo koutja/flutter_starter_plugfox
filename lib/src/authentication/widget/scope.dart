@@ -1,7 +1,3 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:l/l.dart';
-import 'package:meta/meta.dart';
 import 'package:app/src/_core/analytics.dart';
 import 'package:app/src/_core/extensions/inherited_extension.dart';
 import 'package:app/src/_core/pages.dart';
@@ -11,6 +7,10 @@ import 'package:app/src/authentication/model/sign_in_data.dart';
 import 'package:app/src/authentication/model/user.dart';
 import 'package:app/src/authentication/widget/signup_screen.dart';
 import 'package:app/src/initialization/dependencies.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:l/l.dart';
+import 'package:meta/meta.dart';
 
 /// {@template authentication_scope}
 /// AuthenticationScope widget.

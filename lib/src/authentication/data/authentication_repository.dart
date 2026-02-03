@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/src/authentication/model/sign_in_data.dart';
 import 'package:app/src/authentication/model/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 abstract interface class AuthenticationRepository {
   Stream<UserEntity> userChanges();

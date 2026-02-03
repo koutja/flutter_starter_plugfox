@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:l/l.dart';
 import 'package:app/src/_core/config.dart';
+import 'package:l/l.dart';
 
 abstract interface class AnalyticsTracker {
   /// Name of the analytics tracker.

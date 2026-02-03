@@ -1,7 +1,3 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:l10n/l10n.dart';
 import 'package:app/src/_core/config.dart';
 import 'package:app/src/_core/router/router_state_mixin.dart';
 import 'package:app/src/_core/widget/app_navigator.dart';
@@ -10,6 +6,10 @@ import 'package:app/src/check_application/widget/scope.dart';
 import 'package:app/src/initialization/dependencies.dart';
 import 'package:app/src/payment/widget/scope.dart';
 import 'package:app/src/settings/widget/scope.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:l10n/l10n.dart';
 
 /// {@template app}
 /// App widget.

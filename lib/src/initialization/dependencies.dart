@@ -1,12 +1,12 @@
-import 'package:db/database_interface.dart';
-import 'package:flutter/widgets.dart'
-    show BuildContext, Key, ValueNotifier, Widget;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/src/_core/analytics.dart';
 import 'package:app/src/_core/pages.dart';
 import 'package:app/src/authentication/controller/authentication_controller.dart';
 import 'package:app/src/initialization/app_metadata.dart';
 import 'package:app/src/initialization/widget/inherited_dependencies.dart';
+import 'package:db/database_interface.dart';
+import 'package:flutter/widgets.dart'
+    show BuildContext, Key, ValueNotifier, Widget;
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Dependencies
 class Dependencies {

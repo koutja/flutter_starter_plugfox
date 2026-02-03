@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:octopus/octopus.dart';
 import 'package:app/src/_core/router/routes.dart';
 import 'package:app/src/_core/widget/common_actions.dart';
+import 'package:flutter/material.dart';
+import 'package:octopus/octopus.dart';
 
 /// {@template home_screen}
 /// HomeScreen widget.

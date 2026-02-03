@@ -1,13 +1,13 @@
 import 'dart:async' show runZonedGuarded;
 
-import 'package:flutter/widgets.dart';
-import 'package:l/l.dart';
 import 'package:app/src/_core/util/error_util.dart';
 import 'package:app/src/_core/util/log_buffer.dart';
 import 'package:app/src/_core/widget/app.dart' deferred as app;
 import 'package:app/src/_core/widget/app_error.dart' deferred as app_error;
 import 'package:app/src/initialization/initialization.dart'
     deferred as initialization;
+import 'package:flutter/widgets.dart';
+import 'package:l/l.dart';
 
 void main() => l.capture<void>(
   () => runZonedGuarded<void>(

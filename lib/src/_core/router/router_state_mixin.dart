@@ -1,10 +1,10 @@
-import 'package:flutter/widgets.dart'
-    show DefaultTransitionDelegate, State, StatefulWidget, ValueNotifier;
-import 'package:octopus/octopus.dart';
 import 'package:app/src/_core/router/authentication_guard.dart';
 import 'package:app/src/_core/router/home_guard.dart';
 import 'package:app/src/_core/router/routes.dart';
 import 'package:app/src/initialization/dependencies.dart';
+import 'package:flutter/widgets.dart'
+    show DefaultTransitionDelegate, State, StatefulWidget, ValueNotifier;
+import 'package:octopus/octopus.dart';
 
 mixin RouterStateMixin<T extends StatefulWidget> on State<T> {
   late final Octopus router;
